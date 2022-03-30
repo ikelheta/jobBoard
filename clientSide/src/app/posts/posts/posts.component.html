@@ -11,8 +11,10 @@
   <mat-card-title>{{job.position}}</mat-card-title>
   <mat-card-subtitle>{{job.company}}</mat-card-subtitle>
   <mat-card-content>
-    <p>experience : {{job.level}</p>
+    <p>experience : {{job.level}}</p>
     <p>{{job.requirments}}</p>
+    <p *ngIf=" job.rejected.includes(id)" class="not-selected"> Not selected </p>
+
   </mat-card-content>
   <button mat-raised-button color="primary" (click)="onApply(job._id)"
     [disabled]="job.applications.includes(id) || job.rejected.includes(id)" *ngIf="type">Apply</button>
