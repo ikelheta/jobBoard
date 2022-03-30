@@ -11,8 +11,8 @@ export const transporter2 = nodemailer.createTransport({
 export const transporter = nodemailer.createTransport({
   service: "Gmail",
   auth: {
-    user: process.env.NOTIFICATION_USER || "ibrahim.elheta@gmail.com",
-    pass: process.env.NOTIFICATION_PASS || "Hema_123456789"
+    user: process.env.NOTIFICATION_USER 
+    pass: process.env.NOTIFICATION_PASS 
   }
 
 })
