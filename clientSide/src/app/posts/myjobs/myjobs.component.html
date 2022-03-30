@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>supervised_user_circle</mat-icon>
+  </button>
+  <span class="example-spacer"></span>
+  <button mat-raised-button color="warn" (click)="openDialog()">Add job</button>
+  <button mat-raised-button color="warn" (click)="onLogOut()">Logout</button>
+
+</mat-toolbar>
+<mat-card *ngFor="let job of myjobs" class="example-card">
+  <mat-card-title>{{job.position}}</mat-card-title>
+  <mat-card-subtitle>{{job.company}}</mat-card-subtitle>
+  <mat-card-content>
+    <p>experience : {{job.level}}</p>
+    <p *ngIf="job.accepted">accepted : {{job.accepted}}</p>
+    <p>{{job.requirments}}</p>
+  </mat-card-content>
+  <ng-container *ngIf="!job.accepted">
+    <mat-card *ngFor="let application of job.applications">
+      {{application.name }} -{{ application.level }} - {{ application.bio}}
+      <button mat-raised-button color="warn" (click)="onReject(job._id, application._id)">reject</button>
+      <button mat-raised-button color="primary" (click)="onAccept(job._id, application._id)"
+        [disabled]="job.rejected.includes(application._id)  ">Accept</button>
+    </mat-card>
+  </ng-container>
+
+
+</mat-card>

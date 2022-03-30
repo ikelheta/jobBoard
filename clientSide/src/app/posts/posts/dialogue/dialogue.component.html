@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>Add Product</h1>
+<div mat-dialog-content>
+  <form [formGroup]="productForm">
+    <mat-form-field appearance="fill">
+      <mat-label>company </mat-label>
+      <input formControlName="company" matInput placeholder="Enter Your First Name">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>position </mat-label>
+      <input formControlName="position" matInput placeholder="Enter Your First Name">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Level</mat-label>
+      <mat-select formControlName="level">
+        <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Requirments</mat-label>
+      <textarea formControlName="requirments" matInput></textarea>
+    </mat-form-field>
+  </form>
+
+</div>
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>Close </button>
+  <button mat-raised-button color="primary" mat-dialog-close (click)="onSave()"> Save </button>
+</div>

@@ -1,0 +1,204 @@
+<mat-tab-group>
+    <mat-tab label="Employee">
+        <section fxLayout="row" fxLayoutAlign="center center" fxFlexFill>
+            <form [formGroup]="signUpForm" (ngSubmit)="signUpEmployee()" fxLayout="column"
+                ngClass="center-form center-form-lg center-form-md center-form-sm center-form-xs"
+                [ngClass.lg]="{'center-form' : true , 'center-form-lg' : true , 'center-form-md' : false , 'center-form-sm' : false , 'center-form-xs' : false}"
+                [ngClass.md]="{'center-form' : true , 'center-form-lg' : false , 'center-form-md' : true , 'center-form-sm' : false , 'center-form-xs' : false}"
+                [ngClass.sm]="{'center-form' : true , 'center-form-lg' : false , 'center-form-md' : false , 'center-form-sm' : true , 'center-form-xs' : false}"
+                [ngClass.xs]="{'center-form' : true , 'center-form-lg' : false , 'center-form-md' : false , 'center-form-sm' : false , 'center-form-xs' : true}">
+                <h2 fxFlex="1" class="center-text">Sign up!!</h2>
+                <div fxFlex="1">
+                    <mat-form-field appearance="fill" class="form-field">
+                        <mat-label>Enter your name</mat-label>
+                        <input matInput placeholder="user name" type="text" formControlName="name">
+                    </mat-form-field>
+                </div>
+
+                <div fxFlex="1">
+                    <mat-form-field appearance="fill" class="form-field">
+                        <mat-label>E-mail</mat-label>
+                        <input matInput placeholder="user name" type="email" type="text" formControlName="email">
+                    </mat-form-field>
+                </div>
+
+                <div fxFlex="1">
+                    <mat-form-field appearance="fill" class="form-field">
+                        <mat-label>Enter your City</mat-label>
+                        <input matInput placeholder="full name" type="text" formControlName="city">
+                    </mat-form-field>
+                </div>
+                <div fxFlex="1">
+                    <mat-form-field appearance="fill" class="form-field">
+                        <mat-label>Enter your NationalId</mat-label>
+                        <input matInput placeholder="full name" type="text" formControlName="national">
+                    </mat-form-field>
+                </div>
+
+                <div fxFlex="1" ngClass="password-field">
+                    <mat-form-field appearance="fill" class="form-field">
+                        <mat-label>Enter your password</mat-label>
+                        <input matInput placeholder="********" type="password" formControlName="password">
+                    </mat-form-field>
+                </div>
+
+                <div fxFlex="1" ngClass="password-field">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Level</mat-label>
+                        <mat-select formControlName="level">
+                            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div fxFlex="1" ngClass="password-field">
+                    <mat-form-field appearance="fill" class="form-field">
+                        <mat-label>Enter your Bio</mat-label>
+                        <textarea matInput formControlName="bio"> </textarea>
+                    </mat-form-field>
+                </div>
+
+                <div fxFlex="1" ngClass="password-field">
+                    <mat-form-field appearance="fill">
+                        <mat-label>programming Language</mat-label>
+                        <mat-select formControlName="proglang" multiple>
+                            <mat-option>
+                                JavaScript
+                            </mat-option>
+                            <mat-option>
+                                Paython
+                            </mat-option>
+                            <mat-option>
+                                PHP
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+
+
+                <div fxFlex="1" fxLayout="row" fxLayoutAlign="center center">
+                    <button mat-raised-button color="primary" type="submit">sign up</button>
+                </div>
+
+            </form>
+        </section>
+    </mat-tab>
+    <mat-tab label="Employer">
+        <section fxLayout="row" fxLayoutAlign="center center" fxFlexFill>
+            <form [formGroup]="signUpEmployeerForm" (ngSubmit)="signUpEmployeer()" fxLayout="column"
+                ngClass="center-form center-form-lg center-form-md center-form-sm center-form-xs"
+                [ngClass.lg]="{'center-form' : true , 'center-form-lg' : true , 'center-form-md' : false , 'center-form-sm' : false , 'center-form-xs' : false}"
+                [ngClass.md]="{'center-form' : true , 'center-form-lg' : false , 'center-form-md' : true , 'center-form-sm' : false , 'center-form-xs' : false}"
+                [ngClass.sm]="{'center-form' : true , 'center-form-lg' : false , 'center-form-md' : false , 'center-form-sm' : true , 'center-form-xs' : false}"
+                [ngClass.xs]="{'center-form' : true , 'center-form-lg' : false , 'center-form-md' : false , 'center-form-sm' : false , 'center-form-xs' : true}">
+                <h2 fxFlex="1" class="center-text">Sign up!!</h2>
+                <div fxFlex="1">
+                    <mat-form-field appearance="fill" class="form-field">
+                        <mat-label>Enter your name</mat-label>
+                        <input matInput placeholder="user name" type="text" formControlName="name">
+                    </mat-form-field>
+                </div>
+
+                <div fxFlex="1">
+                    <mat-form-field appearance="fill" class="form-field">
+                        <mat-label>E-mail</mat-label>
+                        <input matInput placeholder="user name" type="email" type="text" formControlName="email">
+                    </mat-form-field>
+                </div>
+
+                <div fxFlex="1">
+                    <mat-form-field appearance="fill" class="form-field">
+                        <mat-label>Enter your City</mat-label>
+                        <input matInput placeholder="full name" type="text" formControlName="city">
+                    </mat-form-field>
+                </div>
+                <div fxFlex="1">
+                    <mat-form-field appearance="fill" class="form-field">
+                        <mat-label>Enter your company</mat-label>
+                        <input matInput placeholder="full name" type="text" formControlName="company">
+                    </mat-form-field>
+                </div>
+
+                <div fxFlex="1" ngClass="password-field">
+                    <mat-form-field appearance="fill" class="form-field">
+                        <mat-label>Enter your password</mat-label>
+                        <input matInput placeholder="********" type="password" formControlName="password">
+                    </mat-form-field>
+                </div>
+
+
+
+
+
+
+                <div fxFlex="1" fxLayout="row" fxLayoutAlign="center center">
+                    <button mat-raised-button color="primary" type="submit">sign up</button>
+                </div>
+
+            </form>
+        </section>
+    </mat-tab>
+    <mat-tab label="Sign In Employee">
+        <section fxLayout="row" fxLayoutAlign="center center" fxFlexFill>
+            <form [formGroup]="signInForm" (ngSubmit)="signInEmployee()" fxLayout="column"
+                ngClass="center-form center-form-lg center-form-md center-form-sm center-form-xs"
+                [ngClass.lg]="{'center-form' : true , 'center-form-lg' : true , 'center-form-md' : false , 'center-form-sm' : false , 'center-form-xs' : false}"
+                [ngClass.md]="{'center-form' : true , 'center-form-lg' : false , 'center-form-md' : true , 'center-form-sm' : false , 'center-form-xs' : false}"
+                [ngClass.sm]="{'center-form' : true , 'center-form-lg' : false , 'center-form-md' : false , 'center-form-sm' : true , 'center-form-xs' : false}"
+                [ngClass.xs]="{'center-form' : true , 'center-form-lg' : false , 'center-form-md' : false , 'center-form-sm' : false , 'center-form-xs' : true}">
+                <h2 fxFlex="1" class="center-text">Sign up!!</h2>
+                <div fxFlex="1">
+                    <mat-form-field appearance="fill" class="form-field">
+                        <mat-label>E-mail</mat-label>
+                        <input matInput placeholder="user name" type="email" type="text" formControlName="email">
+                    </mat-form-field>
+                </div>
+
+                <div fxFlex="1" ngClass="password-field">
+                    <mat-form-field appearance="fill" class="form-field">
+                        <mat-label>Enter your password</mat-label>
+                        <input matInput placeholder="********" type="password" formControlName="password">
+                    </mat-form-field>
+                </div>
+
+
+                <div fxFlex="1" fxLayout="row" fxLayoutAlign="center center">
+                    <button mat-raised-button color="primary" type="submit">sign In</button>
+                </div>
+
+            </form>
+        </section>
+    </mat-tab>
+    <mat-tab label="Sign In Employer">
+        <section fxLayout="row" fxLayoutAlign="center center" fxFlexFill>
+            <form [formGroup]="signInEmployeerForm" (ngSubmit)="signInEmployeer()" fxLayout="column"
+                ngClass="center-form center-form-lg center-form-md center-form-sm center-form-xs"
+                [ngClass.lg]="{'center-form' : true , 'center-form-lg' : true , 'center-form-md' : false , 'center-form-sm' : false , 'center-form-xs' : false}"
+                [ngClass.md]="{'center-form' : true , 'center-form-lg' : false , 'center-form-md' : true , 'center-form-sm' : false , 'center-form-xs' : false}"
+                [ngClass.sm]="{'center-form' : true , 'center-form-lg' : false , 'center-form-md' : false , 'center-form-sm' : true , 'center-form-xs' : false}"
+                [ngClass.xs]="{'center-form' : true , 'center-form-lg' : false , 'center-form-md' : false , 'center-form-sm' : false , 'center-form-xs' : true}">
+                <h2 fxFlex="1" class="center-text">Sign up!!</h2>
+                <div fxFlex="1">
+                    <mat-form-field appearance="fill" class="form-field">
+                        <mat-label>E-mail</mat-label>
+                        <input matInput placeholder="user name" type="email" type="text" formControlName="email">
+                    </mat-form-field>
+                </div>
+
+                <div fxFlex="1" ngClass="password-field">
+                    <mat-form-field appearance="fill" class="form-field">
+                        <mat-label>Enter your password</mat-label>
+                        <input matInput placeholder="********" type="password" formControlName="password">
+                    </mat-form-field>
+                </div>
+
+
+                <div fxFlex="1" fxLayout="row" fxLayoutAlign="center center">
+                    <button mat-raised-button color="primary" type="submit">sign In</button>
+                </div>
+
+            </form>
+        </section>
+    </mat-tab>
+</mat-tab-group>

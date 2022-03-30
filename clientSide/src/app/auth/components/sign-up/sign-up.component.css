@@ -1,0 +1,31 @@
+.center-form{
+    border: solid 2.5px gray;
+    border-radius: 15px;
+    padding: 1.5em;
+}
+.center-form-lg{
+    width: 40%;
+}
+.center-form-md{
+    width: 50%;
+}
+.center-form-sm{
+    width: 75%;
+}
+.center-form-xs{
+    width: 100%;
+}
+.center-text{
+    text-align: center;
+}
+.form-field{
+    width: 100%;
+}
+.eye-icon{
+    position: relative;
+}
+.eye-icon{
+    position: absolute;
+    right: 5px;
+    bottom: 15px;
+}
